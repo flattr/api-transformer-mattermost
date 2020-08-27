@@ -1,4 +1,4 @@
-# Grafana to Mattermost API
+# Metrics to Mattermost API
 
 ## TL;DR
 
@@ -12,7 +12,7 @@
 * ...
 * profit!(?)
 
-## Installation for "production"
+## Installation for production
 
 * Install Gunicorn
 * Modify systemd/gunicorn.service and copy it to /etc/systemd/system/gunicorn.service
@@ -21,7 +21,7 @@
 * Run `systemctl daemon-reload` and `systemctl enable gunicorn.service` and `systemctl start gunicorn` to get it running.
 * Create a nginx config
 
-Nginx config, I use /transformer, feel free to change it to / if it's in your root.
+Nginx config, I use /transformer as the base, feel free to change it to / if it's in your root.
 
 ```nginx
     location /transformer {
