@@ -1,0 +1,24 @@
+[Unit]
+Description=api-transformer gunicorn daemon
+Requires=api-transformer.socket
+After=network.target
+
+[Service]
+
+User=www-data
+Group=www-data
+PIDFile=/run/gunicorn/api-transformer.pid
+WorkingDirectory=/var/www/api-transformer
+ExecStart=/var/www/api-transformer/flask/bin/gunicorn --bind unix:/run/gunicorn/api-transformer.socket --pid /run/gunicorn/api-transformer.pid app:app
+ExecStop=/bin/kill -s TERM $MAINPID
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+
+# needed for runtimedirectory
+PermissionsStartOnly=True
+RuntimeDirectory=gunicorn
+RuntimeDirectoryMode=0775
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

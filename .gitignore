@@ -1,0 +1,9 @@
+*.pyc
+.Trashes
+*.tmp
+.ansible
+*.swp
+.DS_Store
+config.py
+flask/*
+__pycache__/

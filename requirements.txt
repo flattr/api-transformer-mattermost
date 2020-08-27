@@ -1,0 +1,11 @@
+certifi
+click
+Flask
+Flask-RESTful
+gunicorn
+Jinja2
+MarkupSafe
+python-dateutil
+requests
+urllib3
+Werkzeug

@@ -1,0 +1,13 @@
+# https://flask.palletsprojects.com/en/1.1.x/config/
+class Config(object):
+    ALERTS_CHANNEL_ID = "<Channel id from View Info>"
+    AUTH_TOKEN = "<webhook token>"
+    DEBUG = False
+    ENDPOINT = "https://<mattermost installation>/api/v4/posts"
+    # used for cookies and other local server stuff
+    SECRET = "<generate a long string>"
+    TESTING = False
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
